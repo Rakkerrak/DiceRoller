@@ -3,6 +3,8 @@ import time
 
 import char
 import diceroll
+import creator
+
 
 invalid = "\n\nInvalid input. Try again?\n"
 
@@ -23,6 +25,8 @@ while True:
             char.pointbuy()
         else:
             print(invalid)
+    elif start == "create":
+        creator.elf.start()
     else:
         time.sleep(.25)
         print(invalid)

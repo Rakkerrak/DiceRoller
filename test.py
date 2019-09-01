@@ -1,6 +1,39 @@
 import random
 import time
 
+
+
+
+
+"""
+#CLASS PRACTICE
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+p1 = Person("John", 36)
+
+print(p1.name)
+print(p1.age)
+
+class Max(object):
+    setvar = 5
+    setvar2 = "an uwu"
+
+    def __init__ (self, marx, karl, carpl):
+        self.marx = marx
+        self.karl = karl
+        self.carpl = carpl
+
+    def marxymoo(self):
+        return print(self.karl, self.marx, "is", self.setvar2)
+
+Commie = Max("Marx", "Karl", "Carpool")
+
+print(Commie.marxymoo())
+"""
+"""
 def roll(amount, sides, message):
     numb = int(amount)
     dwhat = int(sides)
@@ -11,7 +44,7 @@ def roll(amount, sides, message):
         results.append(result)
         numb = numb-1
     return(results)
-
+"""
 
 """
 BABY STATSTATUS

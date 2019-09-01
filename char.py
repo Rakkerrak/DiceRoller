@@ -1,7 +1,7 @@
 import random
 import time
 
-
+masterstats = {}
 
 invalid = "\n\nInvalid input. Try again?\n"
 
@@ -219,6 +219,8 @@ def die4d6():
             if conf == "y" or conf == "yes" or conf == "1":
                 print("Your final stats are:")
                 statstatus()
+                global masterstats
+                masterstats.update(statsdict)
                 return statsdict
             elif conf == "n" or conf == "no" or conf == "0":
                 statsadd()
