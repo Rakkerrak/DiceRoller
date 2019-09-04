@@ -70,6 +70,8 @@ def pointbuy():
         if stan == True and pls <= 15 and add <= tp:
             statsdict[x] = pls
             tp -= add
+            global masterstats
+            masterstats.update(statsdict)
         elif stan == True and pls > 15:
             input ("Sorry! Standard point buy doesn't allow for values over 15!\nTry doing a full pointbuy and making sure all values are over 8 \nif you'd like to break this rule!")
             pointbuy()
@@ -97,7 +99,7 @@ def pointbuy():
 
 def die3d6():
     print("Welcome to the character roller.")
-    count = int(input("How many stats would you like to roll?"))
+    count = int(input("How many stats would you like to roll?\n"))
     print("Rolling 3d6 for your stats:")
     time.sleep(.25)
     endstats = []
@@ -111,7 +113,7 @@ def die3d6():
         threeD6()
         count -= 1
     print(endstats)
-    resp = input("Roll another character? (y/n)")
+    resp = input("Roll another character? (y/n)\n")
     if resp == "y" or resp == "1" or resp == "yes":
         die3d6()
     elif resp == "n" or resp == "no" or resp == "0":
@@ -140,18 +142,22 @@ def die3d6():
             endstats.sort(reverse=True)
             print("You used these values:", usedvalues)
             print("Your original rolls were:", endstats)
-            conf = input("Are these stats acceptable? (y/n)")
+            conf = input("Are these stats acceptable? (y/n)\n")
             if conf == "y" or conf == "yes" or conf == "1":
                 print("Your final stats are:")
                 statstatus()
+                global masterstats
+                masterstats.update(statsdict)
                 return statsdict
             elif conf == "n" or conf == "no" or conf == "0":
                 statsadd()
             else:
-                return
+                print(invalid)
+                statsadd()
         statsadd()
     else:
-        return
+        print(invalid)
+        die3d6()
 
 
 
@@ -185,7 +191,7 @@ def die4d6():
     endstats.sort(reverse=True)
     print(endstats)
 #    print(stanendstats)
-    resp = input("Roll another character? (y/n)")
+    resp = input("Roll another character? (y/n)\n")
     if resp == "y" or resp == "1" or resp == "yes":
         die4d6()
     elif resp == "n" or resp == "no" or resp == "0":
@@ -215,17 +221,21 @@ def die4d6():
             endstats.sort(reverse=True)
             print("You used these values:", usedvalues)
             print("Your original rolls were:", endstats)
-            conf = input("Are these stats acceptable? (y/n)")
+            conf = input("Are these stats acceptable? (y/n)\n")
             if conf == "y" or conf == "yes" or conf == "1":
                 print("Your final stats are:")
                 statstatus()
                 global masterstats
                 masterstats.update(statsdict)
-                return statsdict
+                # masterstats = dict(statsdict)
+                # print(masterstats)
+                # return statsdict
             elif conf == "n" or conf == "no" or conf == "0":
                 statsadd()
             else:
-                return
+                print(invalid)
+                statsadd()
         statsadd()
     else:
-        return
+        print(invalid)
+        die4d6()

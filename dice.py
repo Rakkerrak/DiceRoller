@@ -6,27 +6,21 @@ import diceroll
 import creator
 
 
+
 invalid = "\n\nInvalid input. Try again?\n"
 
 while True:
     print("Welcome to the dice roller.")
     time.sleep(0.25)
-    start = input("Would you like to: \nRoll dice (roll), \nroll a character(char)\n")
+    start = input("Would you like to: \nRoll dice (roll), \nroll a character(stats)\ncreate a character(create)\n")
     if start == "roll":
         print("When prompted please input the number of sides for your dice and the amount of them you would like to roll.")
         diceroll.diceroll()
-    elif start == "char":
-        char_options = input("Standard 4d6 with home rules option(4d6)? \n3d6(3d6?)\nor pointbuy(point)?\n")
-        if char_options == "4d6":
-            char.die4d6()
-        elif char_options == "3d6":
-            char.die3d6()
-        elif char_options == "point":
-            char.pointbuy()
-        else:
-            print(invalid)
+    elif start == "stats":
+        creator.statsOpt()
     elif start == "create":
-        creator.elf.start()
+        creator.halfling.start()
+        # creator.halfelf2.hEStatAdd()
     else:
         time.sleep(.25)
         print(invalid)

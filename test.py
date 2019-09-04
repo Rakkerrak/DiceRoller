@@ -2,9 +2,103 @@ import random
 import time
 
 
+import char
 
 
 
+
+
+
+
+
+
+
+""""
+# HI IM DUMB
+start = 0
+
+masterstatsdict = {
+"STR": start,
+"DEX": start,
+"CON": start,
+"INT": start,
+"WIS": start,
+"CHA": start,
+}
+
+def chaUD():
+     masterstatsdict["CHA"] += 1
+def intUD():
+     masterstatsdict["INT"] += 1
+def wisUD():
+     masterstatsdict["WIS"] += 1
+
+def subraceMod():
+    ans = input("As an elf you get to pick betwen \nHigh Elf(hi), \nWood elf(wood, \nDark Elf/Drow(dark)\n")
+    ansdict = {"hi": intUD, "Hi": intUD, "1": intUD, "wood": wisUD, "Wood": wisUD, "2": wisUD, "dark": chaUD, "Dark": chaUD, "3": chaUD}
+    if ans in ansdict:
+        ansdict[ans]()
+        print(masterstatsdict)
+    else:
+        print(invalid)
+        subraceMod()
+
+
+
+def statsOpt():
+    statOptDict = {"4d6": char.die4d6, "3d6": char.die3d6, "point": char.pointbuy}
+    stat_options = input("Standard 4d6 with home rules option(4d6)? \n3d6(3d6?)\nor pointbuy(point)?\n")
+    if stat_options in statOptDict:
+        statOptDict[stat_options]()
+    else:
+        print(invalid)
+
+# statsOpt()
+subraceMod()
+"""
+"""
+#WHY WONT MY CHILD FUNCTIONS OVERRIDE THE PARENT CLASSSSSS
+
+class Morals(object):
+    def start(self):
+        print("Muskrats")
+
+class Milk(Morals):
+    def start(self):
+        print("Mongrels")
+
+cows = Milk()
+
+cows.start()
+"""
+"""
+dict = {"a": 5, "b": 65465}
+
+print(dict["a"])
+
+
+def run():
+    print("You've won!")
+
+
+
+def maxy():
+    choices = {"cows": run, "Elf": 7}
+    imps = input("cows Elf")
+    if imps in choices:
+        choices[imps]()
+
+#        print(out)
+#        if out == 7:
+#            run()
+#        elif out == 8:
+#            print(choices[imps])
+    else:
+        "Whoops!"
+        maxy()
+
+maxy()
+"""
 """
 #CLASS PRACTICE
 class Person:
