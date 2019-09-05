@@ -4,7 +4,7 @@ import time
 import char
 import diceroll
 import creator
-
+import texts
 
 
 invalid = "\n\nInvalid input. Try again?\n"
@@ -19,11 +19,11 @@ while True:
     elif start == "stats":
         creator.statsOpt()
     elif start == "create":
-        creator.halfling.start()
-        # creator.halfelf2.hEStatAdd()
+        texts.raceOpt()
     else:
         time.sleep(.25)
         print(invalid)
+
 
 
 
