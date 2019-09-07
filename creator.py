@@ -19,15 +19,22 @@ def statsOpt():
     else:
         print(invalid)
         statsOpt()
-masterstatsdict = char.masterstats
 
+
+##GLOBALS
+masterstatsdict = char.masterstats
+mastermodsdict = {}
+masterracial_skills = []
+masterfreeskill = 0
 # masterstatsdict = {}
 
 class Race(object):
 
+    freeskill = 0
     extra = 0
     blurb = ()
     blurb2 = 0
+    racial_skills = []
 
     statsdict = masterstatsdict
     # HE = "Half-elves have two points they may add to any skill."
@@ -128,6 +135,17 @@ class Race(object):
                 print(invalid)
                 Race.subraceMod(self)
 
+    def modGen(self):
+        global mastermodsdict
+        mastermodsdict = masterstatsdict.copy()
+        for x in mastermodsdict:
+            mastermodsdict[x] -= 10
+            mastermodsdict[x] //= 2
+        print("These are your modifiers")
+        for x in mastermodsdict:
+            print(x, ":", mastermodsdict[x])
+
+
     def start(self):
         global masterstatsdict
         statsOpt()
@@ -138,7 +156,12 @@ class Race(object):
             Race.statAdd(self)
             Race.subraceMod(self)
             Race.masterStatus(self)
-
+            Race.modGen(self)
+            global masterracial_skills
+            global masterfreeskill
+            masterracial_skills.append(self.racial_skills
+            masterfreeskill = 0
+            masterfreeskill += self.freeskill
         if self.name == "HU":
             self.variant()
             start2()
@@ -150,7 +173,7 @@ class Race(object):
 class HalfElf(Race):
     extra = 2
     blurb = texts.HE
-
+    freeskill = 2
 
 class Dwarf(Race):
     extra = 0
@@ -159,7 +182,7 @@ class Dwarf(Race):
 
 class Elf(Race):
 
-
+    racial_skills = ["Perception"]
     blurb = texts.ELF
     blurb2 = "As an elf you get to pick betwen \nHigh Elf(hi), \nWood elf(wood, \nDark Elf/Drow(dark)\n"
 
@@ -172,6 +195,7 @@ class Halfling(Race):
 class Human(Race):
     extra = 0
     blurb = texts.HU
+    freeskill = 0
 
     def variant(self):
         vari = input("Humans have two options: \nIn standard rules they get +1 to all stats.(stan) \nIn variant rules they get +1 to two stats, a proficiency, and a skill.(var)")
@@ -180,6 +204,7 @@ class Human(Race):
                 masterstatsdict[x] += 1
         elif vari == "var":
             self.extra += 2
+            self.freeskill = 1
         else:
             print(invalid)
             self.variant()
@@ -194,6 +219,7 @@ class Gnome(Race):
 
 class HalfOrc(Race):
     blurb = texts.HO
+    racial_skills = ["Intimidation"]
 
 class Tiefling(Race):
     blurb = texts.TF

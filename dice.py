@@ -5,6 +5,9 @@ import char
 import diceroll
 import creator
 import texts
+import dndclass
+import backgrounds
+
 
 
 invalid = "\n\nInvalid input. Try again?\n"
@@ -20,6 +23,15 @@ while True:
         creator.statsOpt()
     elif start == "create":
         texts.raceOpt()
+        texts.classOpt()
+        texts.bgOpt()
+        # dndclass.cleric.start()
+        # print("choicecheck", dndclass.cleric.choiceCL)
+        print("creatorpage", creator.masterfreeskill)
+        # print("dndpagedice", dndclass.masterfreeskill2)
+    elif start == "test":
+        texts.bgOpt()
+
     else:
         time.sleep(.25)
         print(invalid)

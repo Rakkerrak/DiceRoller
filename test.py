@@ -1,19 +1,132 @@
 import random
 import time
-
+import string
 
 import char
 
+"""
+#add a string to a list with append not extend
+def func():
+    feats = []
+    feat = str(input("Please select a Background feat. from D&D 5e. Make sure to talk it over with your DM\n Type your feat. below\n"))
+    feats.append(feat)
+    print(feats)
 
+func()
+"""
+"""
+#OH MY GOSH SOMETHING WORKED FIRST TRY HALLELUJAH
+def add():
+    list = []
+    addition = input("gah")
+    list.append(addition)
+    print(list)
+add()
+"""
+"""
+#Still no and I'm tired
+words = ['hello,','i','am','ROB','ALSOD',"i'm", "how do"]
+words2 = [word[:1].upper() + word[1:] for word in words]
+print(words2)
+"""
 
+"""
+#AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+stre = ["mar", "mark's"]
 
+def cap():
+    str = ["mar", "mark's"]
+    for x in str:
+        x.join(w.capitalize() for w in x.split())
+    print(str)
 
+def cap2():
+    str = ["mar", "mark's"]
+    for x in str:
+        string.capwords(x)
+    print(str)
 
+def cap3():
+    str = ["mar", "mark's"]
+    for x in str:
+        str[x].title()
+    print(str)
+cap2()
+cap3()
+print(stre[1].capitalize())
+"""
+"""
+#This doesn't work. Sad.
+#Scratch tha. It works with a while loop not a for loop booyah
 
+def func(can):
+    while can > 0:
+        print("This is a number")
+        can -= 1
 
+func(2)
+"""
 
+"""
+a = [1, 2, 3, 4, 5]
+print(' '.join(map(str, a)))
 
-""""
+print("in new line")
+print('\n'.join(map(str, a)))
+
+print("a     b c")
+"""
+"""
+#DICTIONARY COPY METHODS
+dicta = {
+"a" : 5,
+"b" : 5,
+"c" : 4
+}
+
+dictb = dicta
+dictc = dict(dicta)
+dictd = dicta.copy()
+
+dicta = {
+"a" : 5,
+"b" : 6,
+"c" : 45
+}
+
+print(dicta)
+print(dictb)
+print(dictc)
+print(dictd)
+"""
+
+"""
+tup = (None)
+print(tup)
+
+"""
+"""
+#CONVERTS STATS TO MODS
+set = int(5.5)
+print(set)
+
+dict = {
+"A" : 5,
+"B" : 16,
+"C" : 18,
+"D" : 13,
+"E" : 15
+}
+def func():
+    dict2 = dict.copy()
+    for x in dict2:
+        dict2[x] -= 10
+        dict2[x] = dict2[x] // 2
+    print(dict2)
+
+func()
+"""
+"""
 # HI IM DUMB
 start = 0
 
