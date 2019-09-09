@@ -5,9 +5,16 @@ import time
 import char
 import texts
 
-# def tempstatuselfs():
-#     for x in tempdict:
-#         print(x, ":", tempdict[x])
+
+##GLOBALS
+masterfreeskill = 0
+masterracial_skills = []
+
+masterstatsdict = char.masterstats
+mastermodsdict = {}
+
+
+
 
 invalid = "\n\nInvalid input. Try again?\n"
 
@@ -21,12 +28,6 @@ def statsOpt():
         statsOpt()
 
 
-##GLOBALS
-masterstatsdict = char.masterstats
-mastermodsdict = {}
-masterracial_skills = []
-masterfreeskill = 0
-# masterstatsdict = {}
 
 class Race(object):
 
@@ -37,7 +38,6 @@ class Race(object):
     racial_skills = []
 
     statsdict = masterstatsdict
-    # HE = "Half-elves have two points they may add to any skill."
 
     def masterStatus(self):
         for x in masterstatsdict:
@@ -159,7 +159,7 @@ class Race(object):
             Race.modGen(self)
             global masterracial_skills
             global masterfreeskill
-            masterracial_skills.append(self.racial_skills
+            masterracial_skills.append(self.racial_skills)
             masterfreeskill = 0
             masterfreeskill += self.freeskill
         if self.name == "HU":

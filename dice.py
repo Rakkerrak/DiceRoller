@@ -7,7 +7,7 @@ import creator
 import texts
 import dndclass
 import backgrounds
-
+import agg
 
 
 invalid = "\n\nInvalid input. Try again?\n"
@@ -25,9 +25,10 @@ while True:
         texts.raceOpt()
         texts.classOpt()
         texts.bgOpt()
+        agg.agg()
         # dndclass.cleric.start()
         # print("choicecheck", dndclass.cleric.choiceCL)
-        print("creatorpage", creator.masterfreeskill)
+        # print("creatorpage", creator.masterfreeskill)
         # print("dndpagedice", dndclass.masterfreeskill2)
     elif start == "test":
         texts.bgOpt()

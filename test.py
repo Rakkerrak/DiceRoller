@@ -2,8 +2,119 @@ import random
 import time
 import string
 
-import char
+# import char
+# import creator
+# import dndclass
+a = ["a", "b"]
+b = ["c", "d"]
 
+a.extend(b)
+print(a)
+
+a.append(b)
+
+print(a)
+
+"""
+skills = ["core"]
+
+def skillagg():
+    global skills
+    # skills.extend(creator.masterracial_skills)
+    def class_skill_choice():
+        masterchoiceCL = 3
+        masterclassskill = ["a"]
+        choicenum = 0
+        choicenum += masterchoiceCL
+        tempskills = []
+        classskills = masterclassskill
+        if choicenum > 0:
+            while choicenum > 0:
+                new_skill = str(input("You have %d skills to choose from %s.Please type one below\n" % (choicenum, classskills)))
+                tempskills.append(new_skill)
+                choicenum -= 1
+                print(new_skill)
+            print(tempskills)
+            conf = input("Is this good? (y/n)\n")
+            if conf == "y" or conf == "yes":
+                global skills
+                skills.extend(tempskills)
+            elif conf == "no" or conf == "n":
+                class_skill_choice()
+            else:
+                print("oops!")
+                class_skill_choice()
+        else:
+            pass
+
+    class_skill_choice()
+    print(skills)
+
+skillagg()
+
+# """
+"""
+int = 6
+inp = input("Please choose %d skills" % (int))
+"""
+
+"""
+#This works
+def func():
+    a = ["a", "b"]
+    b = ["d"]
+    a.extend(b)
+    print(a)
+func()
+"""
+
+"""
+#FILE WRITING PRACTICE
+cows = "cows have legs"
+
+crabs = ["1", "2", "3", "4"]
+# strcrabs = str(crabs)
+# f=open("guru99.txt", "a+")
+# for i in range(2):
+#      f.write("Appended line %d\r\n%s\n%s"  % (i+15, cows, strcrabs))
+# print(strcrabs)
+f=open("test.txt", "a+")
+f.write("Feats:\n")
+for x in crabs:
+    f=open("test.txt", "a+")
+    f.write("%s\n" % (x))
+
+f = open("test.txt")
+lines = f.readlines()
+print(lines[2])
+print(lines[1])
+
+
+max = []
+def add(num):
+    num2 = int(num)
+    line = f.readlines()
+    max.append(line[num2])
+add(3)
+
+
+read = f.readlines()
+for x in read:
+    print(x)
+"""
+
+
+"""
+a+ makes new file. allows read and append
+r+ does not make new file. allows write and read
+\t tab
+\n line break
+\r return to the beginning of the line
+%s is a placeholder for a string
+    [list] is formatted with " and ,
+        str(list) doesn't fix that
+%d is a placeholderlder for a number % (i+0) defines starting number?
+"""
 """
 #add a string to a list with append not extend
 def func():

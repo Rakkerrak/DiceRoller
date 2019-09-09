@@ -1,9 +1,14 @@
 
 
+
+
+
+
+
 #GLOBALS
 masterfreeskill3 = 0
-masterextralang = 0
 masterskillBG = []
+masterextralang = 0
 mastertools = []
 masterfeats = []
 
