@@ -1,5 +1,8 @@
+import os
+
 import agg
 import creator
+
 
 def start():
     file = open("Charsheet.txt", "a+")
