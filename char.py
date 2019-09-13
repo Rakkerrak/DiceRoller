@@ -40,6 +40,8 @@ def pointbuy():
         start = 8
     else:
         start = 0
+        
+    statsdict = {}
     statsdict = {
     "STR": start,
     "DEX": start,
@@ -70,8 +72,8 @@ def pointbuy():
         if stan == True and pls <= 15 and add <= tp:
             statsdict[x] = pls
             tp -= add
-            global masterstats
-            masterstats.update(statsdict)
+            # global masterstats
+            # masterstats.update(statsdict)
         elif stan == True and pls > 15:
             input ("Sorry! Standard point buy doesn't allow for values over 15!\nTry doing a full pointbuy and making sure all values are over 8 \nif you'd like to break this rule!")
             pointbuy()
@@ -90,7 +92,19 @@ def pointbuy():
         else:
             input("How did you even get here?")
             pointbuy()
-
+    statstatus()
+    conf = input("Are these stats acceptable? (y/n)\n")
+    if conf == "y" or conf == "yes" or conf == "1":
+        print("Your final stats are:")
+        statstatus()
+        global masterstats
+        masterstats.update(statsdict)
+        return statsdict
+    elif conf == "n" or conf == "no" or conf == "0":
+        pointbuy()
+    else:
+        print(invalid)
+        pointbuy()
 #    STRn = statsdict["STR:"]
     statstatus()
     print("Total points available:", tp)

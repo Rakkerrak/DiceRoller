@@ -8,7 +8,7 @@ import texts
 import dndclass
 import backgrounds
 import agg
-
+import pr
 
 invalid = "\n\nInvalid input. Try again?\n"
 
@@ -22,14 +22,23 @@ while True:
     elif start == "stats":
         creator.statsOpt()
     elif start == "create":
+        #chooses race (texts->creator) --> rolls stats in char(via creator).
         texts.raceOpt()
+        # print(creator.masterHPadd)
+        print(creator.mastersub)
+        # selects class
         texts.classOpt()
+        # select background
         texts.bgOpt()
+        # aggregates class, race, and background traits
         agg.agg()
+        # prints details to a text file
+        pr.start()
         # dndclass.cleric.start()
         # print("choicecheck", dndclass.cleric.choiceCL)
         # print("creatorpage", creator.masterfreeskill)
         # print("dndpagedice", dndclass.masterfreeskill2)
+        quit()
     elif start == "test":
         texts.bgOpt()
 

@@ -1,10 +1,309 @@
 import random
 import time
-import string
+import os
+# import string
 
 # import char
 # import creator
 # import dndclass
+
+os.system('libreoffice Charsheet.txt')
+"""
+stats = {
+"STR" : 0,
+"DEX" : 1,
+"CON" : 3,
+"WIS" : 4,
+"INT" : 4,
+"CHA" : 6
+}
+mods = {
+"STR" : 10,
+"DEX" : 11,
+"CON" : 13,
+"WIS" : 14,
+"INT" : 14,
+"CHA" : 16
+}
+
+skills = ["Animal Handling", "Perception", "Intimidation"]
+allfreeskill = 0
+miscdict = {"RACE" : "Human", "AGE" : 25, "SIZE" : "Medium", "SPEED" : 15, "Languages" : "lingo", "HP" : 10, "HitDie" : 12, "CLASS" : "Cleric", "Proficience Bonus" : 5, "BACKGROUND" : "Criminal", "Alignment" : "CN", "Secret Language" : "Mormonism"}
+freelang = 0
+
+feats = ["This is a feat(pg. 5)", "This is another(pg. 6)"]
+tools = ["Thieves' Tools", "Herbalistm Kit"]
+weapons = ["simple", "martial"]
+armor = ["light", "medium"]
+
+
+equip = ["a", "bunch", "of", "crap"]
+
+saves = ["CHA", "WIS"]
+initi = 0
+
+def start():
+    file = open("Charsheet.txt", "a+")
+
+    file.write("\nClass & Level : {} lvl 1      Background: {}".format(miscdict["CLASS"], miscdict["BACKGROUND"]))
+    file.write("\nRace: {}      Alignment: {}".format(miscdict["RACE"], miscdict["Alignment"]))
+    file.write("\n\n    Your stats")
+    for x in stats:
+        file.write("\n{} : {}".format(x, stats[x]))
+    file.write("\n\n    Your modifiers")
+    for x in mods:
+        file.write("\n{} : {}".format(x, mods[x]))
+    file.write("\n\nSave Proficiencies:")
+    for x in saves:
+        file.write(" \n{}".format(x))
+    file.write("\n\nSkill Proficiencies:")
+    for x in skills:
+        file.write("\n{}".format(x))
+    file.write("\n\nSpeed: {}       HP: {}       Hit die: d{}".format(miscdict["SPEED"], miscdict["HP"], miscdict["HitDie"]))
+    file.write("\n\nThese are your Tool Proficiencies:")
+    for x in tools:
+        file.write("\n{}".format(x))
+    file.write("\n\nThese are your Weapon Proficiencies:")
+    for x in weapons:
+        file.write("\n{}".format(x))
+    file.write("\n\nThese are your Armor Proficiencies:")
+    for x in armor:
+        file.write("\n{}".format(x))
+    file.write("\n\nThese are your character's feats, including page numbers you can find them on.  Some things have already been added into your character's stats such as proficiencies and stat bonuses.")
+    for x in feats:
+        file.write("\n{}".format(x))
+    file.write("\nLanguages: {}".format(miscdict["Languages"]))
+    if "Secret Language" in miscdict:
+        file.write("\nSecret Language: {}".format(miscdict["Secret Language"]))
+    if "Extra Languages" in miscdict:
+        file.write("\nExtra Languages: {}".format(miscdict["Extra Languages"]))
+    file.write("\nEquipment:\n")
+    for x in equip:
+        file.write("{}, ".format(x))
+    file.write("\n\n\nUseful page numbers: \nArmor(to calculate Initiative): pg. 143      Weapons: pg 149         \nEquipment 'Packs'(and the general area for all other equipment): pg. 151 \nLanguages: pg123     Optional Starting Gold(Remove all equipment and gold and self-buy): pg. 143 \nNon-Background Features(Choose one if you're a variant Human!): pg.165")
+start()
+"""
+"""
+#This syntax works to reference a function in a child class
+
+class Arms(object):
+
+    def __init__(self, name):
+        self.name = name
+
+    def start(self):
+        if self.name == "Cow":
+            print("workingdocus")
+        else:
+            self.start(self)
+
+class Leg(Arms):
+
+    def start(self):
+        print("porcupine")
+
+leg = Leg("Leg")
+
+leg.start()
+"""
+
+
+"""
+#Equip test
+
+
+def equiplong():
+    equip = []
+    eql = ["a", "d", "c"]
+    # for x in eql:
+    # chool = input("Please choose from the following: \n%s \n%s \n%s" % (eql[0], eql[1], eql[2]))
+    # # chooldict = {"1" : equip.extend(eql[0]), "2" : equip.extend(eql[1]), "3" : equip.extend(eql[2])}
+    # if chool in chooldict:
+    #     chooldict[chool]
+    # else:
+    #     print("error")
+    ans = int(input("Please choose from the following: \n%s \n%s \n%s" % (eql[0], eql[1], eql[2])))
+    ans -= 1
+    equip.extend(eql[ans])
+    print(equip)
+    print(eql[0])
+
+equiplong()
+
+quip = []
+
+def equip():
+    quipdict = {"a" : "b", "c" : "d"
+    }
+
+    global quip
+    for x in quipdict:
+        choose = int(input("Which? \n1: %s\n2: %s \n" % (x, quipdict[x])))
+        if choose == 1:
+            quip.append(x)
+        if choose == 2:
+            quip.append(quipdict[x])
+
+# while True:
+#     equip()
+#     # global quip
+#     print(quip)
+
+
+
+# """
+"""
+a = ["1", "2"]
+b = ["3", "4"]
+
+c = []
+
+c.extend(a+b)
+
+print(c)
+
+
+"""
+"""
+# Yeah global matters
+marking = 0
+
+def change():
+    global marking
+    marking += 2
+
+change()
+print(marking)
+"""
+"""
+#Huh....
+msub = []
+class Mork(object):
+    sub = []
+
+    def __init__(self, portals):
+        self.portals = portals
+
+    def start(self):
+        self.portals += 1
+        print(self.portals)
+        self.sub.append("Markle")
+        global msub
+        msub.extend(self.sub)
+
+
+corp = Mork(5)
+
+corp.start()
+print(msub)
+"""
+"""
+self = ["Monkey"]
+
+def func():
+    if self == []:
+        pass
+    else:
+        print("didn't work")
+        for x in self:
+            x.lower()
+            print(self)
+mork = ["Caterpullars", "Macteria"]
+self.extend(mork)
+self.append(["Carterpullers"])
+
+func()
+
+
+"""
+
+"""
+miscdict = {"AGE" : "150-250", "NAME" : "Elf", "CLASS" : "Cleric"}
+
+def align():
+    print("Now you wil choose your alignment")
+    if miscdict["CLASS"] == "CLeric":
+        print("Please be advised. As a %s, your alignment should be compatible with your God as according to your DM" % (miscdict["CLASS"]))
+    else:
+        pass
+    inp = input("Please type your alignment below:\n")
+    confi = input("Your alignment is %s?(y/n)" % (inp))
+    if confi == "y" or confi == "yes":
+        miscdict.update({"Alignment" : inp})
+    elif confi == "n" or confi == "no":
+        align()
+    else:
+        print(invalid)
+        align()
+
+align()
+print(miscdict)
+"""
+"""
+def ageagg():
+    global miscdict
+    print("A(n) %s usually lives in this age range: %s" % (miscdict["NAME"], miscdict["AGE"]))
+    inp = input("Please type your age:\n")
+    conf = input("Your age is %s?(y/n) \n" % (inp))
+    if conf == "y" or conf == "yes":
+        miscdict["AGE"] = inp
+    elif conf == "n" or conf == "no":
+        ageagg()
+    else:
+        print(invalid)
+
+ageagg()
+print(miscdict)
+"""
+"""
+freelang = 2
+dict = {}
+def func():
+    if freelang > 0:
+        tempfreelang = 0
+        tempfreelang += freelang
+        list = []
+        print("You have %d languages to add to your character.  If you think the language is too far-fetched, talk it over with your DM\n" % (freelang))
+        while tempfreelang > 0:
+            inp = input("Please type a language\n")
+            list.append(inp)
+            tempfreelang -= 1
+    dict.update({"Extra Languages" : ", " .join(list)})
+    print(dict)
+func()
+
+"""
+"""
+#You must declare the dict before you update?
+miscdictR = {}
+a = 2
+b = 3
+tempdict = {"NAME" : a, "AGE" : b }
+miscdictR.update(tempdict)
+
+
+print(miscdictR)
+"""
+"""
+# adding to dictionaries using outside variables
+
+a1 = {"a" : 2, "d" : 54}
+b =  "x"
+c = 5
+newdict = {b : c}
+print(newdict)
+a1.update(newdict)
+print(a1)
+
+"""
+"""
+#Strings formatted to not look like hot garbo
+a = ["core", "message", "what", "even", "is", "it"]
+print("Can I do this %s" % (", " .join(a)))
+print("\n","Can I do this %s" % (", " .join(a)) )
+"""
+"""
+#extend vs append because i didn't get it the first six times
 a = ["a", "b"]
 b = ["c", "d"]
 
@@ -14,6 +313,15 @@ print(a)
 a.append(b)
 
 print(a)
+
+f = "corpse"
+
+a.extend(f)
+print(a)
+##v This one works
+a.append(f)
+print(a)
+"""
 
 """
 skills = ["core"]
