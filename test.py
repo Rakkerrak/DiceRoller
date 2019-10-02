@@ -7,7 +7,32 @@ import os
 # import creator
 # import dndclass
 
+# import datetime from datetime
+
+dict1 = {"a" : 3,
+"c" : 5,
+"b" : 2}
+
+dict2 = {"F" : 8,
+"v" : 4,
+"b" : 7}
+
+dict1.copy(dict2)
+print(dict1)
+print(dict2)
+"""
+import agg
+
+miscdict = {"RACE" : "halfling", "CLASS" : "Cleric", "AGE" : 25}
+
+name = "{}{}{}".format(agg.miscdict["RACE"], agg.miscdict["CLASS"], agg.miscdict["AGE"])
+print(name)
+
+# print(datetime.day + datetime.month + datetime.year + datetime.hour + datetime.minute)
+"""
+"""
 os.system('libreoffice Charsheet.txt')
+"""
 """
 stats = {
 "STR" : 0,

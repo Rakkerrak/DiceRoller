@@ -3,9 +3,14 @@ import os
 import agg
 import creator
 
+import datetime
+
+
+
 
 def start():
-    file = open("Charsheet.txt", "a+")
+    name = "{}{}{}".format(agg.miscdict["RACE"], agg.miscdict["CLASS"], agg.miscdict["AGE"])
+    file = open("{}Charsheet.txt".format(name), "a+")
 
     file.write("\nClass & Level : {} lvl 1      Background: {}".format(agg.miscdict["CLASS"], agg.miscdict["BACKGROUND"]))
     file.write("\nRace: {}      Alignment: {}".format(agg.miscdict["RACE"], agg.miscdict["Alignment"]))
@@ -48,4 +53,4 @@ def start():
     for x in agg.equip:
         file.write("{}, ".format(x))
     file.write("\n\n\nUseful page numbers: \nArmor(to calculate Initiative): pg. 143      Weapons: pg 149         \nEquipment 'Packs'(and the general area for all other equipment): pg. 151 \nLanguages: pg123     Optional Starting Gold(Remove all equipment and gold and self-buy): pg. 143 \nNon-Background Features(Choose one if you're a variant Human!): pg.165")
-    os.system('libreoffice Charsheet.txt')
+    os.system('libreoffice {}Charsheet.txt'.format(name))

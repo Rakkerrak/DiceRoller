@@ -96,6 +96,7 @@ class Race(object):
                 for x in tempdict:
                     print(x, ":", tempdict[x])
             global masterstatsdict
+            tempdict = {}
             tempdict = dict(masterstatsdict)
             extra = self.extra
             for x in tempdict:
@@ -109,7 +110,7 @@ class Race(object):
                     extra -= add
                 else:
                     print(invalid)
-                    statAdd(self)
+                    self.statAdd()
             tempstatus(self)
             answ = input("Are these acceptable?\n")
             if answ == "y" or answ == "yes" or answ == "1":
@@ -117,11 +118,15 @@ class Race(object):
                 # global masterstatsdict
                 masterstatsdict = dict(tempdict)
                 Race.masterStatus(self)
+                # print("I'ma loop now")
+                # quit()
+                # pass
             elif answ == "n" or answ == "no" or answ == "0":
-                statAdd(self)
+
+                self.statAdd()
             else:
                 print(invalid)
-                statAdd(self)
+                self.statAdd()
 
     def subraceMod(self):
         if self.blurb2 == 0:
@@ -234,6 +239,7 @@ class Race(object):
             time.sleep(.25)
             Race.abilityMods(self)
             Race.statAdd(self)
+            # quit()
             Race.subraceMod(self)
             Race.masterStatus(self)
             Race.modGen(self)
@@ -247,7 +253,7 @@ class Race(object):
             Race.globalizer(self)
 
 
-        if self.name == "HU":
+        if self.name == "Human":
             self.variant()
             start2()
         else:

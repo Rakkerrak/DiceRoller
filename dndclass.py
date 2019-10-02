@@ -88,7 +88,7 @@ class Classes(object):
             telong = []
             ans = input("Please choose from the following: \n1: %s \n2: %s \n3: %s\n" % (self.equiplong[0], self.equiplong[1], self.equiplong[2]))
             ans2 = int(ans)
-            ans2 - 1
+            ans2 -= 1
             telong.append(self.equiplong[ans2])
             print(", " .join(telong))
             confir = input("Is this correct?\n")
@@ -151,6 +151,7 @@ class Barbarian(Classes):
 
 class Bard(Classes):
     classskill = ["Monkeys"]
+    # TODO: fix this somehow human
     choiceCL = 3
     armor = ["light"]
     weapons = ["simple", "hand crossbows", "longswords", "rapiers", "shortswords"]

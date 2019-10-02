@@ -98,6 +98,7 @@ def miscagg():
     miscdict.update(creator.miscdictR)
     miscdict.update(dndclass.miscdictC)
     miscdict.update(backgrounds.miscdictBG)
+    miscdict.update({"SUBRACE" : creator.mastersub})
     global saves
     saves.extend(dndclass.mastersavesCL)
     # print(miscdict)
