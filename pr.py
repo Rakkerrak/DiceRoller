@@ -2,6 +2,7 @@ import os
 
 import agg
 import creator
+import time
 
 import datetime
 
@@ -53,4 +54,6 @@ def start():
     for x in agg.equip:
         file.write("{}, ".format(x))
     file.write("\n\n\nUseful page numbers: \nArmor(to calculate Initiative): pg. 143      Weapons: pg 149         \nEquipment 'Packs'(and the general area for all other equipment): pg. 151 \nLanguages: pg123     Optional Starting Gold(Remove all equipment and gold and self-buy): pg. 143 \nNon-Background Features(Choose one if you're a variant Human!): pg.165")
+    time.sleep(1.0)
+    file.close()
     os.system('libreoffice {}Charsheet.txt'.format(name))
